@@ -2,6 +2,12 @@
 
 
 
+Go to project repository in GitLab `Settings > CI/CD > Variables > Expand > Add variable`
+
+
+Set Variable `SONAR_TOKEN` with and add the `TOKEN` generated in sonarqube 
+
+and sonar So
 ![](https://i.imgur.com/e39f5os.png)
 
 
@@ -9,7 +15,7 @@
 
 ![](https://i.imgur.com/dGwvaMc.png)
 
-
+also set a second variable `SONAR_HOST_URL` to `http://localhost:9000` or to your sonarqube URL
 
 Create a New Project in SonarQube from `Dashboard > Create Project > Manually`
 
@@ -37,7 +43,8 @@ Go to GitLab to your Project Repository then `Repository > Files `  Add new file
 
 ![](https://i.imgur.com/ELFbUdh.png)
 
-Name the new file as `sonar-project.properties`
+
+\Name the new file as `sonar-project.properties`
 and add these lines
 
 	sonar.projectKey=<project-display-name>
@@ -47,8 +54,8 @@ and commit
 
 ![](https://i.imgur.com/72pJxze.png)
 
-Before commit `.gitlab-ci.yml` file go to GitLab Project Repository
 
+ go to GitLab Project Repository
 `Settings > CI/CD > Runners`  
 Turn off `Shared runners`
 and make sure a runner is enabled for this project if not
@@ -57,7 +64,7 @@ Click on `Enable for this project` which has status `active`
 
 ![](https://i.imgur.com/uoNieQc.png)
 
-
+Before commit `.gitlab-ci.yml` file
 Similarly make a new file name it `.gitlab-ci.yml`
 
 ```
